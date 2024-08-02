@@ -12,6 +12,12 @@ const CounterSlice = createSlice({
 
         Increment:(state)=>{
             state.count+=1
+            if(state.count > 100){
+                state.count = 100
+                state.error = "Maximum Reached"
+            }else{
+                state.error = null
+            }
         },
         Decrement:(state)=>{
             state.count-=1
