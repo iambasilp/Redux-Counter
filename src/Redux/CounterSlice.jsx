@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
+createAsyncThunk()
 const CounterSlice = createSlice({
     name:"Counter",
     initialState:{
@@ -10,12 +12,6 @@ const CounterSlice = createSlice({
 
         Increment:(state)=>{
             state.count+=1
-            if(state.count > 5){
-                state.count = 5
-                state.error = "Maximum Reached"
-            }else{
-                state.error = null
-            }
         },
         Decrement:(state)=>{
             state.count-=1
